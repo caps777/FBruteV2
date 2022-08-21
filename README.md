@@ -19,3 +19,10 @@ Facebook bruteforcer in python 3 and can be used in pydroid3
 give the id or gmail of the victim and you can add your own passwords in pwlist.txt
 
 <b><u>NOTE:</u></b> Facebook block the user for 1 <b>Hour</b> after 20 wrong password attempt.
+
+
+<p align='center'><b>All the Passwords save in victimspass.txt file</b></p>
+
+```diff
++All the Passwords save in victimspass.txt file
+```
